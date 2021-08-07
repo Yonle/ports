@@ -20,8 +20,14 @@ case "${SHPKG_DISTRO}" in
 		;;
 esac
 
+# package version
+shpkg_version="2.0.9"
+
+# package description
+shpkg_description="modern and intuitive terminal-based text editor"
+
 # package source code
-shpkg_source="https://github.com/zyedidia/micro/archive/refs/tags/v2.0.9.tar.gz"
+shpkg_source="https://github.com/zyedidia/micro/archive/refs/tags/v${shpkg_version}.tar.gz"
 
 prepare(){
 	cd ${SRCDIR}

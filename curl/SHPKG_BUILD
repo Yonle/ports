@@ -25,6 +25,12 @@ case "${SHPKG_DISTRO}" in
 		;;
 esac
 
+# package version
+shpkg_version="7.77.0"
+
+# package description
+shpkg_description="command line tool for transferring data with URL syntax"
+
 # package source code
 shpkg_source="https://curl.se/download/curl-7.77.0.tar.gz"
 

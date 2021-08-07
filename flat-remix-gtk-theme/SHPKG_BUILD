@@ -1,8 +1,14 @@
 # package name
 shpkg_name="Flat Remix GTK Theme"
 
+# package version
+shpkg_version="20201129"
+
+# package description
+shpkg_description="Flat Remix GTK Theme"
+
 # package source code
-shpkg_source="https://github.com/daniruiz/flat-remix-gtk/archive/refs/heads/master.zip"
+shpkg_source="https://github.com/daniruiz/flat-remix-gtk/archive/refs/tags/${shpkg_version}.zip"
 
 # tell whether to use zip as an extractor
 shpkg_source_archive_zip="true"
@@ -11,7 +17,7 @@ shpkg_source_archive_zip="true"
 shpkg_enable_verbose_logging="false"
 
 prepare(){
-	cd "${SRCDIR}/flat-remix-gtk-master"
+	cd "${SRCDIR}/flat-remix-gtk-${shpkg_version}"
 	if [ ! -d "${HOME}/.themes" ]; then
 		mkdir -p "${HOME}/.themes"
 	else

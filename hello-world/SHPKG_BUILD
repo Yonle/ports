@@ -1,20 +1,20 @@
 # package name
 shpkg_name="Hello World"
 
+# package description
+shpkg_description="A sample hello world program for the shpkg"
+
 # package build dependencies
 shpkg_build_depends="clang"
 
 # package source code
-shpkg_source="https://github.com/shpkg/hello-world/archive/refs/heads/master.zip"
+shpkg_source="https://github.com/shpkg/hello-world"
 
-# tell whether to use zip as an extractor
-shpkg_source_archive_zip="true"
-
-# tell whether to print output of extraction (default: false)
-shpkg_enable_verbose_logging="false"
+# use git to fetch source code
+shpkg_src_use_git="true"
 
 prepare(){
-	cd "${SRCDIR}/hello-world-master"
+	cd "${SRCDIR}"
 }
 
 build(){

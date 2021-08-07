@@ -1,20 +1,20 @@
 # package name
 shpkg_name="Oh My ZSH"
 
+# package description
+shpkg_description="Oh My Zsh is an open source, community-driven framework for managing your zsh configuration."
+
 # package source code
-shpkg_source="https://github.com/ohmyzsh/ohmyzsh/archive/refs/heads/master.zip"
+shpkg_source="https://github.com/ohmyzsh/ohmyzsh"
 
 # package dependencies
 shpkg_depends="zsh git"
 
-# tell whether to use zip as an extractor
-shpkg_source_archive_zip="true"
-
-# tell whether to print output of extraction (default: false)
-shpkg_enable_verbose_logging="false"
+# use git to fetch source code
+shpkg_src_use_git="true"
 
 prepare(){
-	cd "${SRCDIR}/ohmyzsh-master"
+	cd "${SRCDIR}"
 }
 
 finish(){

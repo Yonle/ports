@@ -20,8 +20,14 @@ case "${SHPKG_DISTRO}" in
 		;;
 esac
 
+# package version
+shpkg_version="5.1"
+
+# package description
+shpkg_description="GNU Bourne Again SHell"
+
 # package source code
-shpkg_source="https://ftpmirror.gnu.org/bash/bash-5.1.tar.gz"
+shpkg_source="https://ftpmirror.gnu.org/bash/bash-${shpkg_version}.tar.gz"
 
 prepare(){
 	cd ${SRCDIR}

@@ -22,8 +22,14 @@ case "${SHPKG_DISTRO}" in
         	;;
 esac
 
+# package version
+shpkg_version="5.8"
+
+# package description
+shpkg_description="small, friendly text editor inspired by pico"
+
 # package source code
-shpkg_source="https://www.nano-editor.org/dist/v5/nano-5.8.tar.xz"
+shpkg_source="https://www.nano-editor.org/dist/v5/nano-${shpkg_version}.tar.xz"
 
 prepare(){
 	cd ${SRCDIR}

@@ -25,8 +25,14 @@ case "${SHPKG_DISTRO}" in
 		;;
 esac
 
+# package version
+shpkg_version="1.1.2"
+
+# package description
+shpkg_description="New set of tools for working with SquashFS images"
+
 # package source code
-shpkg_source="https://github.com/AgentD/squashfs-tools-ng/archive/refs/heads/master.zip"
+shpkg_source="https://github.com/AgentD/squashfs-tools-ng/archive/refs/tags/v${shpkg_version}.zip"
 
 # tell whether to use zip as an extractor
 shpkg_source_archive_zip="true"
@@ -35,7 +41,7 @@ shpkg_source_archive_zip="true"
 shpkg_enable_verbose_logging="false"
 
 prepare(){
-	cd "${SRCDIR}/squashfs-tools-ng-master"
+	cd "${SRCDIR}/squashfs-tools-ng-${shpkg_version}"
 	bash autogen.sh
 	./configure --prefix=/opt/shpkg/squashfs-tools-ng
 }
