@@ -1,6 +1,6 @@
 shpkg_name="uwufetch"
 shpkg_description="A meme system info tool for (almost) all your Linux/Unix-based systems, based on the nyan/UwU trend on r/linuxmasterrace."
-shpkg_build_depends="clang"
+shpkg_build_depends="clang, make"
 shpkg_source="https://github.com/TheDarkBug/uwufetch/archive/refs/tags/1.6.tar.gz"
 
 prepare(){
