@@ -28,4 +28,5 @@ remove(){
 	else
 		make uninstall
 	fi
+	rm $PREFIX/share/man/man1/uwufetch.1.gz
 }
