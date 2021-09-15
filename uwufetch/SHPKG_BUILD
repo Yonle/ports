@@ -17,8 +17,8 @@ build(){
 
 finish(){
 	echo "Processing manpage for ${shpkg_name}...."
-	mkdir -p $PREFIX/share/man/man1
-	cp uwufetch.1.gz $PREFIX/share/man/man1
+	mkdir -p ${PREFIX:-/usr}/share/man/man1
+	cp uwufetch.1.gz ${PREFIX:-/usr}/share/man/man1
 }
 
 remove(){
@@ -28,5 +28,5 @@ remove(){
 	else
 		make uninstall
 	fi
-	rm $PREFIX/share/man/man1/uwufetch.1.gz
+	rm ${PREFIX:-/usr}/share/man/man1/uwufetch.1.gz
 }
