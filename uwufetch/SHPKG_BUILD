@@ -12,13 +12,14 @@ build(){
 		make termux
 	else
 		make build
+		${SHPKG_SUDO} make install
 	fi
 }
 
 finish(){
 	echo "Processing manpage for ${shpkg_name}...."
-	mkdir -p ${PREFIX:-/usr}/share/man/man1
-	cp uwufetch.1.gz ${PREFIX:-/usr}/share/man/man1
+	${SHPKG_SUDO} mkdir -p ${PREFIX:-/usr}/share/man/man1
+	${SHPKG_SUDO} cp uwufetch.1.gz ${PREFIX:-/usr}/share/man/man1
 }
 
 remove(){
@@ -26,7 +27,7 @@ remove(){
 	if [ `uname -o` = "Android" ]; then
 		make termux_uninstall
 	else
-		make uninstall
+		${SHPKG_SUDO} make uninstall
 	fi
-	rm ${PREFIX:-/usr}/share/man/man1/uwufetch.1.gz
+	${SHPKG_SUDO} rm ${PREFIX:-/usr}/share/man/man1/uwufetch.1.gz
 }
