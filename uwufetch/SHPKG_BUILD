@@ -1,0 +1,33 @@
+shpkg_name="uwufetch"
+shpkg_description="A meme system info tool for (almost) all your Linux/Unix-based systems, based on the nyan/UwU trend on r/linuxmasterrace."
+shpkg_build_depends="clang, make"
+shpkg_source="https://github.com/TheDarkBug/uwufetch/archive/refs/tags/1.6.tar.gz"
+
+prepare(){
+	cd "${SRCDIR}"
+}
+
+build(){
+	if [ `uname -o` = "Android" ]; then
+		make termux
+	else
+		make build
+		${SHPKG_SUDO} make install
+	fi
+}
+
+finish(){
+	echo "Processing manpage for ${shpkg_name}...."
+	${SHPKG_SUDO} mkdir -p ${PREFIX:-/usr}/share/man/man1
+	${SHPKG_SUDO} cp uwufetch.1.gz ${PREFIX:-/usr}/share/man/man1
+}
+
+remove(){
+	cd ~/.shpkg/uwufetch/pkgsrc/
+	if [ `uname -o` = "Android" ]; then
+		make termux_uninstall
+	else
+		${SHPKG_SUDO} make uninstall
+	fi
+	${SHPKG_SUDO} rm ${PREFIX:-/usr}/share/man/man1/uwufetch.1.gz
+}
